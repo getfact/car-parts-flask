@@ -10,4 +10,6 @@ Bootstrap(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-from app import models, views
+from app.main import bp as bp_main
+
+app.register_blueprint(bp_main, url_prefix="/")

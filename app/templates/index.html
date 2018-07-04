@@ -1,14 +1,12 @@
-{% import 'bootstrap/wtf.html' as wtf %}
+{% extends 'base.html' %}
 
-{{ wtf.quick_form(form) }}
-
+{% block app_content %}
 {% for part in parts %}
 <h1>{{ part.name }}</h1>
 <h1>{{ part.body }}</h1>
 {% endfor %}
 
-<table class="table table-hover">
-    <tr>
         <td width="70px">
             {{ part }}
         </td>
+{% endblock %}

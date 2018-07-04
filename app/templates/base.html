@@ -1,0 +1,33 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %}{{ title }} | Sodas Parts{% else %}Welcome to Sodas Parts{% endif %}
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse navbar-static-top text-white">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand text-white" href="{{ url_for('main.index') }}">walla</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                    <li><a href="{{ url_for('main.about ') }}">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}
